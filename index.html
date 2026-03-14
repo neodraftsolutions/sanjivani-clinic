@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dr. Sanjay M. Kalburgi - Sanjivani Clinic. Family Physician & Acupuncturist with 25+ Years Experience. Book an appointment today.">
+    <meta name="keywords" content="Dr. Sanjay M. Kalburgi, Sanjivani Clinic, Family Physician, Acupuncturist, Clinic, Healthcare, Medical Appointment">
+    <meta name="author" content="Sanjivani Clinic">
+    <title>Sanjivani Clinic | Dr. Sanjay M. Kalburgi</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration for Premium Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            blue: '#0284c7',       /* Premium Sky Blue */
+                            darkblue: '#0f172a',   /* Deep Slate */
+                            green: '#059669',      /* Elegant Emerald */
+                            light: '#f8fafc',      /* Ultra soft slate */
+                            accent: '#e0f2fe'      /* Soft highlight */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'premium': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                        'premium-hover': '0 20px 40px -10px rgba(2, 132, 199, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Animations */
+        body { font-family: 'Inter', sans-serif; background-color: #fcfcfd; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; letter-spacing: -0.02em; }
+        
+        .hover-card-up {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-card-up:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(2, 132, 199, 0.12);
+        }
+
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(135deg, #0284c7, #059669);
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 1);
+        }
+
+        .bg-dots {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* Floating WhatsApp Animation */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .wa-float:hover { animation: pulse-ring 1.5s infinite; }
+    </style>
+</head>
+<body class="text-gray-800 antialiased relative">
+
+    <!-- Sticky Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-md shadow-sm z-50 transition-all duration-300 border-b border-gray-100" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 md:h-24 transition-all">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center gap-3 group">
+                        <div class="w-12 h-12 bg-gradient-to-br from-medical-blue to-[#0369a1] text-white rounded-xl flex items-center justify-center text-xl shadow-md group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-notes-medical"></i>
+                        </div>
+                        <div>
+                            <span class="font-heading font-extrabold text-2xl text-medical-darkblue block leading-none">Sanjivani</span>
+                            <span class="text-xs text-medical-blue font-bold tracking-widest uppercase mt-1 block">Clinic</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-sm font-semibold text-gray-600 hover:text-medical-blue transition-colors">Home</a>
+                    <a href="#about" class="text-sm font-semibold text-gray-600 hover:text-medical-blue transition-colors">About</a>
+                    <a href="#services" class="text-sm font-semibold text-gray-600 hover:text-medical-blue transition-colors">Services</a>
+                    <a href="#info" class="text-sm font-semibold text-gray-600 hover:text-medical-blue transition-colors">Info</a>
+                    <a href="#appointment" class="bg-medical-darkblue hover:bg-medical-blue text-white px-7 py-3 rounded-full font-bold transition-colors shadow-lg hover:shadow-xl flex items-center gap-2 text-sm">
+                        <i class="fa-regular fa-calendar-check"></i> Book Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-medical-darkblue hover:text-medical-blue focus:outline-none p-2 bg-gray-50 rounded-lg">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-2xl pb-6">
+            <div class="px-4 pt-4 space-y-2">
+                <a href="#home" class="block px-4 py-3 text-base font-bold text-gray-700 hover:text-medical-blue hover:bg-medical-light rounded-xl">Home</a>
+                <a href="#about" class="block px-4 py-3 text-base font-bold text-gray-700 hover:text-medical-blue hover:bg-medical-light rounded-xl">About Doctor</a>
+                <a href="#services" class="block px-4 py-3 text-base font-bold text-gray-700 hover:text-medical-blue hover:bg-medical-light rounded-xl">Services</a>
+                <a href="#info" class="block px-4 py-3 text-base font-bold text-gray-700 hover:text-medical-blue hover:bg-medical-light rounded-xl">Clinic Info</a>
+                <a href="#appointment" class="block px-4 py-4 text-base font-bold text-white bg-medical-darkblue rounded-xl mt-4 text-center shadow-md">Book Appointment</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section id="home" class="pt-32 pb-16 md:pt-44 md:pb-28 bg-gradient-to-b from-medical-light to-white overflow-hidden relative">
+        <!-- Decorative Premium Background Elements -->
+        <div class="absolute top-0 right-0 w-full h-full bg-dots opacity-40 z-0"></div>
+        <div class="absolute top-20 left-10 w-72 h-72 bg-medical-blue opacity-10 rounded-full blur-3xl z-0"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-medical-green opacity-10 rounded-full blur-3xl z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+                
+                <!-- Text Content -->
+                <div class="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white text-medical-blue font-bold text-xs sm:text-sm mb-2 border border-blue-100 shadow-sm">
+                        <i class="fa-solid fa-stethoscope"></i> Sanjivani Clinic
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-medical-darkblue leading-tight">
+                        Dr. Sanjay M. <br class="hidden sm:block"><span class="gradient-text">Kalburgi</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl lg:text-2xl text-gray-600 font-medium">
+                        Family Physician & Acupuncturist
+                    </p>
+                    <div class="flex items-center justify-center lg:justify-start gap-3">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-medical-green text-sm shadow-inner">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                        <p class="text-base sm:text-lg text-gray-600">Over <strong class="text-gray-900">25+ Years</strong> of Trusted Experience</p>
+                    </div>
+                    
+                    <div class="pt-6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://wa.me/919880850111?text=Hello%20Doctor,%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" 
+                           class="w-full sm:w-auto bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i> Book on WhatsApp
+                        </a>
+                        <a href="https://maps.app.goo.gl/AzA5MXzTCymXaKLF6?g_st=ac" target="_blank"
+                           class="w-full sm:w-auto bg-white border border-gray-200 text-gray-700 hover:border-medical-blue hover:text-medical-blue px-8 py-4 rounded-full font-bold text-lg transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-location-dot"></i> Get Location
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Premium Abstract Graphic -->
+                <div class="w-full lg:w-1/2 relative mt-8 lg:mt-0">
+                    <div class="relative w-full max-w-lg mx-auto aspect-square px-4 sm:px-0">
+                        <!-- Abstract Blob -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-medical-blue/20 to-medical-green/20 rounded-[3rem] transform rotate-3 scale-105 transition-transform hover:rotate-6 duration-700"></div>
+                        
+                        <!-- Main Graphic Box -->
+                        <div class="w-full h-full bg-white/60 rounded-[3rem] shadow-premium overflow-hidden flex flex-col items-center justify-center relative z-10 glass-panel">
+                            <!-- Inner Gradients -->
+                            <div class="absolute top-0 right-0 w-48 h-48 bg-medical-accent opacity-60 rounded-bl-full blur-2xl"></div>
+                            <div class="absolute bottom-0 left-0 w-48 h-48 bg-emerald-50 opacity-60 rounded-tr-full blur-2xl"></div>
+
+                            <!-- INSTRUCTION: To add the doctor's profile photo, replace the 'src' link below with your actual image path or URL (e.g., src="images/doctor-profile.jpg") -->
+                            <div class="w-32 h-32 sm:w-40 sm:h-40 bg-white rounded-full flex items-center justify-center shadow-2xl mb-6 relative z-10 border-4 border-white overflow-hidden">
+                                <img src="smiling-indian-male-doctor-with-crossed-arms-isolated-transparent-background-png.webp" alt="Dr. Sanjay M. Kalburgi" class="w-full h-full object-cover">
+                            </div>
+                            
+                            <div class="text-center z-10 space-y-2 bg-white/80 px-8 py-3 rounded-2xl shadow-sm border border-gray-100 backdrop-blur-md">
+                                <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-medical-darkblue">Sanjivani Clinic</h3>
+                                <p class="text-medical-blue font-semibold text-sm">Holistic Healing & Care</p>
+                            </div>
+
+                            <!-- Decorative Elements -->
+                            <div class="absolute top-10 left-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse border border-gray-50">
+                                <i class="fa-solid fa-heart-pulse text-medical-blue"></i>
+                            </div>
+                            <div class="absolute bottom-16 right-10 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center animate-bounce border border-gray-50" style="animation-duration: 4s;">
+                                <i class="fa-solid fa-leaf text-medical-green text-xl"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Experience Badge -->
+                        <div class="absolute -bottom-4 left-4 sm:-bottom-6 sm:-left-6 bg-white px-5 py-4 rounded-2xl shadow-xl z-20 flex items-center gap-4 border border-gray-100 hover:-translate-y-2 transition-transform duration-300">
+                            <div class="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center text-medical-green text-2xl shadow-inner">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div>
+                                <p class="font-heading font-extrabold text-gray-900 text-lg sm:text-xl leading-none">25+ Years</p>
+                                <p class="text-xs sm:text-sm text-gray-500 font-bold mt-1 uppercase tracking-wider">Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. About Doctor Section -->
+    <section id="about" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
+                
+                <!-- Text Content -->
+                <div class="w-full lg:w-1/2 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-medical-light text-medical-blue rounded-full text-sm font-bold mb-2 border border-blue-100">
+                        <i class="fa-solid fa-user-md"></i> About The Doctor
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-medical-darkblue leading-tight">
+                        Committed to Your Family's Health & Wellness
+                    </h2>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Dr. Sanjay M. Kalburgi is a highly respected Family Physician and Acupuncturist with over 25 years of clinical experience. He specializes in providing comprehensive, holistic healthcare that blends modern diagnostics with time-tested therapeutic practices.
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        At Sanjivani Clinic, patient care is the highest priority. Dr. Kalburgi believes in treating the root cause of ailments rather than just the symptoms, ensuring long-term wellness and preventive care for patients of all ages.
+                    </p>
+
+                    <div class="bg-gray-50 p-6 sm:p-8 rounded-3xl border border-gray-100 mt-8 shadow-sm">
+                        <h3 class="font-heading font-bold text-medical-darkblue mb-5 text-xl">Educational Qualifications</h3>
+                        <div class="flex flex-wrap gap-3 sm:gap-4">
+                            <span class="bg-white border border-gray-100 px-5 py-2.5 rounded-xl font-bold text-gray-700 shadow-sm flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-medical-blue"></i> B.Sc.</span>
+                            <span class="bg-white border border-gray-100 px-5 py-2.5 rounded-xl font-bold text-gray-700 shadow-sm flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-medical-blue"></i> B.A.M.S.</span>
+                            <span class="bg-white border border-gray-100 px-5 py-2.5 rounded-xl font-bold text-gray-700 shadow-sm flex items-center gap-2"><i class="fa-solid fa-award text-medical-green"></i> MD (AM)</span>
+                            <span class="bg-white border border-gray-100 px-5 py-2.5 rounded-xl font-bold text-gray-700 shadow-sm flex items-center gap-2"><i class="fa-solid fa-award text-medical-green"></i> DAC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor Image / Premium Secondary Graphic -->
+                <div class="w-full lg:w-1/2">
+                    <div class="relative rounded-[2.5rem] overflow-hidden shadow-premium aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] group bg-medical-darkblue">
+                        
+                        <!-- INSTRUCTION: To add a full photo of the doctor/clinic, replace the 'src' link below with your actual image path or URL (e.g., src="images/clinic-photo.jpg") -->
+                        <img src="smiling-indian-male-doctor-with-crossed-arms-isolated-transparent-background-png.webp" alt="Dr. Kalburgi in Clinic" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+                        
+                        <!-- Quote Overlay -->
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0b1120] to-transparent p-8 pt-24 z-10">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 backdrop-blur-sm border border-white/20">
+                                <i class="fa-solid fa-quote-left text-xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-heading font-medium text-white italic">
+                                "Healing is a matter of time, but it is sometimes also a matter of opportunity."
+                            </h3>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Services Section -->
+    <section id="services" class="py-24 bg-gray-50 relative border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100/50 text-medical-blue rounded-full text-sm font-bold mb-4 border border-blue-200">
+                    <i class="fa-solid fa-briefcase-medical"></i> Our Expertise
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-medical-darkblue mb-6">Medical Services & Treatments</h2>
+                <p class="text-gray-600 text-lg sm:text-xl">Providing a holistic approach to your health through traditional wisdom and modern medical understanding.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-3xl p-8 shadow-premium hover-card-up border border-gray-100 group overflow-hidden relative flex flex-col h-full">
+                    <div class="w-16 h-16 bg-blue-50 text-medical-blue rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:-translate-y-2 transition-transform duration-300 relative z-10 border border-blue-100">
+                        <i class="fa-solid fa-house-medical"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3 font-heading relative z-10">General Family Medicine</h3>
+                    <p class="text-gray-600 mb-8 relative z-10 flex-grow">Comprehensive primary care for individuals and families, treating acute and chronic illnesses with personalized attention.</p>
+                    
+                    <!-- Abstract Graphic Area -->
+                    <div class="w-full h-32 rounded-2xl overflow-hidden relative bg-gradient-to-br from-blue-50 to-blue-100/50 group-hover:from-blue-100 group-hover:to-blue-200/50 transition-colors duration-500 flex items-center justify-center border border-blue-100/50">
+                        <i class="fa-solid fa-stethoscope text-7xl text-medical-blue/10 absolute -bottom-4 -right-2 transform -rotate-12 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="flex gap-2.5 items-end opacity-70">
+                            <div class="w-3.5 h-12 bg-medical-blue rounded-full animate-pulse" style="animation-delay: 0s;"></div>
+                            <div class="w-3.5 h-20 bg-medical-blue rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
+                            <div class="w-3.5 h-16 bg-medical-blue rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
+                            <div class="w-3.5 h-10 bg-medical-blue rounded-full animate-pulse" style="animation-delay: 0.6s;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-3xl p-8 shadow-premium hover-card-up border border-gray-100 group overflow-hidden relative flex flex-col h-full">
+                    <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:-translate-y-2 transition-transform duration-300 relative z-10 border border-emerald-100">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3 font-heading relative z-10">Acupuncture Therapy</h3>
+                    <p class="text-gray-600 mb-8 relative z-10 flex-grow">Expert acupuncture treatments to stimulate the body's natural healing abilities and promote physical and emotional well-being.</p>
+                    
+                    <!-- Abstract Graphic Area -->
+                    <div class="w-full h-32 rounded-2xl overflow-hidden relative bg-gradient-to-br from-emerald-50 to-emerald-100/50 group-hover:from-emerald-100 group-hover:to-emerald-200/50 transition-colors duration-500 flex items-center justify-center border border-emerald-100/50">
+                        <i class="fa-solid fa-yin-yang text-7xl text-emerald-600/10 absolute -bottom-4 -right-2 group-hover:rotate-180 transition-transform duration-1000"></i>
+                        <div class="flex gap-6 relative">
+                            <div class="w-1 h-20 bg-emerald-400 rounded-full"><div class="absolute -top-1.5 left-0 w-3 h-3 bg-emerald-300 rounded-full shadow-md transform -translate-x-1"></div></div>
+                            <div class="w-1 h-14 bg-emerald-400 rounded-full mt-6"><div class="absolute top-4.5 left-[1.75rem] w-3 h-3 bg-emerald-300 rounded-full shadow-md transform -translate-x-1"></div></div>
+                            <div class="w-1 h-24 bg-emerald-400 rounded-full -mt-2"><div class="absolute -top-3.5 right-0 w-3 h-3 bg-emerald-300 rounded-full shadow-md transform translate-x-1"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-3xl p-8 shadow-premium hover-card-up border border-gray-100 group overflow-hidden relative flex flex-col h-full">
+                    <div class="w-16 h-16 bg-rose-50 text-rose-500 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:-translate-y-2 transition-transform duration-300 relative z-10 border border-rose-100">
+                        <i class="fa-solid fa-person-walking-with-cane"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3 font-heading relative z-10">Chronic Pain Treatment</h3>
+                    <p class="text-gray-600 mb-8 relative z-10 flex-grow">Specialized management strategies for chronic pain conditions, improving mobility and enhancing overall quality of life.</p>
+                    
+                    <!-- Abstract Graphic Area -->
+                    <div class="w-full h-32 rounded-2xl overflow-hidden relative bg-gradient-to-br from-rose-50 to-rose-100/50 group-hover:from-rose-100 group-hover:to-rose-200/50 transition-colors duration-500 flex items-center justify-center border border-rose-100/50">
+                        <i class="fa-solid fa-heart-pulse text-7xl text-rose-500/10 absolute -bottom-4 -right-2 transform group-hover:scale-110 transition-transform duration-500"></i>
+                        <svg class="w-24 h-12 text-rose-400 opacity-80" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-3xl p-8 shadow-premium hover-card-up border border-gray-100 group overflow-hidden relative flex flex-col h-full">
+                    <div class="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:-translate-y-2 transition-transform duration-300 relative z-10 border border-purple-100">
+                        <i class="fa-solid fa-apple-whole"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3 font-heading relative z-10">Lifestyle & Preventive</h3>
+                    <p class="text-gray-600 mb-8 relative z-10 flex-grow">Guidance on diet, exercise, and lifestyle modifications to prevent disease and maintain optimal health in the long run.</p>
+                    
+                    <!-- Abstract Graphic Area -->
+                    <div class="w-full h-32 rounded-2xl overflow-hidden relative bg-gradient-to-br from-purple-50 to-purple-100/50 group-hover:from-purple-100 group-hover:to-purple-200/50 transition-colors duration-500 flex items-center justify-center border border-purple-100/50">
+                        <i class="fa-solid fa-dumbbell text-7xl text-purple-500/10 absolute -bottom-4 -right-2 transform -rotate-45 group-hover:rotate-0 transition-transform duration-500"></i>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-purple-300/80 shadow-inner flex items-center justify-center">
+                                <i class="fa-solid fa-carrot text-purple-600/70 text-lg"></i>
+                            </div>
+                            <div class="w-14 h-14 rounded-full bg-purple-400/80 shadow-inner flex items-center justify-center z-10">
+                                <i class="fa-solid fa-heart text-white text-2xl"></i>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-purple-200/80 shadow-inner flex items-center justify-center">
+                                <i class="fa-solid fa-droplet text-purple-600/50 text-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-white rounded-3xl p-8 shadow-premium hover-card-up border border-gray-100 group overflow-hidden relative flex flex-col h-full">
+                    <div class="w-16 h-16 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:-translate-y-2 transition-transform duration-300 relative z-10 border border-teal-100">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3 font-heading relative z-10">Consultation & Diagnosis</h3>
+                    <p class="text-gray-600 mb-8 relative z-10 flex-grow">Thorough medical evaluations and accurate diagnosis using extensive clinical experience to determine the best treatment path.</p>
+                    
+                    <!-- Abstract Graphic Area -->
+                    <div class="w-full h-32 rounded-2xl overflow-hidden relative bg-gradient-to-br from-teal-50 to-teal-100/50 group-hover:from-teal-100 group-hover:to-teal-200/50 transition-colors duration-500 flex items-center justify-center border border-teal-100/50">
+                        <i class="fa-solid fa-file-medical text-7xl text-teal-600/10 absolute -bottom-4 -right-2 transform group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="w-20 h-20 border-4 border-dashed border-teal-400/80 rounded-full animate-spin-slow flex items-center justify-center" style="animation-duration: 8s;"></div>
+                        <i class="fa-solid fa-magnifying-glass absolute text-4xl text-teal-600"></i>
+                    </div>
+                </div>
+
+                <!-- Call to action card inside grid -->
+                <div class="bg-gradient-to-br from-medical-blue to-[#0369a1] rounded-3xl p-8 shadow-premium flex flex-col justify-center items-center text-center text-white hover-card-up relative overflow-hidden h-full">
+                    <div class="absolute inset-0 bg-dots opacity-20"></div>
+                    <div class="relative z-10 w-full">
+                        <i class="fa-regular fa-calendar-plus text-6xl mb-6 text-white/90 drop-shadow-lg"></i>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold mb-3 font-heading">Need a Consultation?</h3>
+                        <p class="text-blue-100 mb-8 px-2 font-medium">Book an appointment easily via WhatsApp and skip the waiting line.</p>
+                        <a href="#appointment" class="block sm:inline-block bg-white text-medical-darkblue px-8 py-4 rounded-full font-extrabold shadow-lg hover:bg-gray-50 hover:shadow-xl hover:-translate-y-1 transition-all w-full sm:w-auto">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Clinic Information & 5. Appointment Booking -->
+    <section id="info" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="flex flex-col lg:flex-row bg-white rounded-[2.5rem] shadow-premium overflow-hidden border border-gray-100">
+                
+                <!-- Left: Clinic Info & Map -->
+                <div class="w-full lg:w-5/12 bg-medical-darkblue text-white p-8 sm:p-12 relative overflow-hidden flex flex-col justify-between">
+                    <!-- Background pattern -->
+                    <div class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-medical-blue opacity-20 rounded-full blur-3xl"></div>
+                    <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-medical-green opacity-20 rounded-full blur-3xl"></div>
+
+                    <div class="relative z-10">
+                        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold mb-8 border-b border-white/10 pb-6">Clinic Information</h2>
+                        
+                        <div class="space-y-8">
+                            <!-- Clinic Name -->
+                            <div class="flex items-start gap-5">
+                                <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 border border-white/5 shadow-inner backdrop-blur-sm">
+                                    <i class="fa-solid fa-hospital text-2xl text-blue-200"></i>
+                                </div>
+                                <div class="pt-1">
+                                    <h4 class="text-blue-200 text-xs uppercase tracking-widest font-bold mb-1">Clinic Name</h4>
+                                    <p class="text-xl font-bold">Sanjivani Clinic</p>
+                                </div>
+                            </div>
+
+                            <!-- Timings -->
+                            <div class="flex items-start gap-5">
+                                <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 border border-white/5 shadow-inner backdrop-blur-sm">
+                                    <i class="fa-regular fa-clock text-2xl text-blue-200"></i>
+                                </div>
+                                <div class="pt-1">
+                                    <h4 class="text-blue-200 text-xs uppercase tracking-widest font-bold mb-1">Clinic Timings</h4>
+                                    <p class="text-lg font-medium text-gray-100">11:00 AM – 3:30 PM</p>
+                                    <p class="text-lg font-medium text-gray-100">6:00 PM – 11:00 PM</p>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="flex items-start gap-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#25D366]/20 flex items-center justify-center shrink-0 border border-[#25D366]/30 shadow-inner backdrop-blur-sm">
+                                    <i class="fa-brands fa-whatsapp text-3xl text-[#25D366]"></i>
+                                </div>
+                                <div class="pt-1">
+                                    <h4 class="text-blue-200 text-xs uppercase tracking-widest font-bold mb-1">WhatsApp Appointment</h4>
+                                    <a href="https://wa.me/919880850111" target="_blank" class="text-xl sm:text-2xl font-bold hover:text-green-300 transition-colors">
+                                        +91 98808 50111
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Map Link Button -->
+                            <div class="pt-4">
+                                <a href="https://maps.app.goo.gl/AzA5MXzTCymXaKLF6?g_st=ac" target="_blank" class="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 border border-white/20 px-8 py-4 rounded-full transition-all w-full font-bold text-lg hover:-translate-y-1">
+                                    <i class="fa-solid fa-map-location-dot"></i> Open in Google Maps
+                                </a>
+                            </div>
+
+                            <!-- Premium Map Graphic -->
+                            <div class="mt-8 w-full h-48 bg-slate-800 rounded-3xl overflow-hidden border border-white/10 flex items-center justify-center relative group shadow-inner">
+                                <!-- Abstract map lines -->
+                                <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#38bdf8 1.5px, transparent 1.5px); background-size: 15px 15px;"></div>
+                                <i class="fa-solid fa-route text-7xl text-white/5 absolute"></i>
+                                
+                                <div class="absolute inset-0 bg-black/40 flex items-center justify-center z-10 backdrop-blur-[2px] group-hover:bg-black/20 group-hover:backdrop-blur-0 transition-all cursor-pointer" onclick="window.open('https://maps.app.goo.gl/AzA5MXzTCymXaKLF6?g_st=ac', '_blank')">
+                                    <div class="bg-white text-medical-darkblue px-6 py-3 rounded-full font-bold shadow-2xl flex items-center gap-2 transform group-hover:scale-105 transition-transform">
+                                        <i class="fa-solid fa-location-crosshairs text-medical-blue"></i> View Map Route
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Appointment Booking Form -->
+                <div id="appointment" class="w-full lg:w-7/12 p-8 sm:p-12 bg-gray-50/50">
+                    <div class="mb-10 text-center sm:text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-50 text-medical-green rounded-full text-sm font-bold mb-4 border border-emerald-100">
+                            <i class="fa-regular fa-clock"></i> Quick & Easy
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-gray-900">Book an Appointment</h2>
+                        <p class="text-gray-500 mt-3 text-lg">Fill the form below and we will redirect you to WhatsApp with a pre-filled message.</p>
+                    </div>
+
+                    <form id="bookingForm" onsubmit="handleBooking(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Name -->
+                            <div>
+                                <label for="patientName" class="block text-sm font-bold text-gray-700 mb-2">Patient Name *</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+                                        <i class="fa-regular fa-user text-gray-400 text-lg"></i>
+                                    </div>
+                                    <input type="text" id="patientName" required
+                                        class="pl-14 w-full rounded-2xl border-gray-200 border bg-white py-4 px-4 text-gray-800 focus:ring-2 focus:ring-medical-blue focus:border-transparent outline-none transition-all shadow-sm" 
+                                        placeholder="John Doe">
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div>
+                                <label for="patientPhone" class="block text-sm font-bold text-gray-700 mb-2">Phone Number *</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+                                        <i class="fa-solid fa-phone text-gray-400 text-lg"></i>
+                                    </div>
+                                    <input type="tel" id="patientPhone" required
+                                        class="pl-14 w-full rounded-2xl border-gray-200 border bg-white py-4 px-4 text-gray-800 focus:ring-2 focus:ring-medical-blue focus:border-transparent outline-none transition-all shadow-sm" 
+                                        placeholder="+91 98765 43210">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Date -->
+                        <div>
+                            <label for="preferredDate" class="block text-sm font-bold text-gray-700 mb-2">Preferred Date *</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+                                    <i class="fa-regular fa-calendar text-gray-400 text-lg"></i>
+                                </div>
+                                <input type="date" id="preferredDate" required
+                                    class="pl-14 w-full rounded-2xl border-gray-200 border bg-white py-4 px-4 text-gray-800 focus:ring-2 focus:ring-medical-blue focus:border-transparent outline-none transition-all shadow-sm">
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label for="patientMessage" class="block text-sm font-bold text-gray-700 mb-2">Brief Message / Symptoms</label>
+                            <textarea id="patientMessage" rows="4"
+                                class="w-full rounded-2xl border-gray-200 border bg-white py-4 px-5 text-gray-800 focus:ring-2 focus:ring-medical-blue focus:border-transparent outline-none transition-all shadow-sm resize-none" 
+                                placeholder="Please describe your symptoms or reason for visit briefly..."></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-extrabold py-5 px-6 rounded-2xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3 text-lg sm:text-xl hover:-translate-y-1 mt-4">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i> Send Request via WhatsApp
+                        </button>
+                        <p class="text-sm text-center text-gray-500 mt-4 flex items-center justify-center gap-2"><i class="fa-solid fa-shield-halved text-medical-green"></i> Your information is secure.</p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-medical-light border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-medical-darkblue mb-6">Patient Stories</h2>
+                <p class="text-gray-600 text-lg sm:text-xl">Read what our patients have to say about their experience at Sanjivani Clinic.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-sm hover:shadow-premium transition-shadow border border-gray-100 relative">
+                    <i class="fa-solid fa-quote-left text-5xl text-blue-50 absolute top-8 right-8"></i>
+                    <div class="flex text-yellow-400 mb-6 text-sm gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-8 relative z-10 text-lg">"Dr. Kalburgi is incredibly patient and thorough. His acupuncture treatment significantly reduced my chronic back pain after just a few sessions. Highly recommended!"</p>
+                    <div class="flex items-center gap-4 border-t border-gray-50 pt-6">
+                        <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center text-medical-blue font-bold text-xl border border-blue-100">P1</div>
+                        <div>
+                            <h4 class="font-extrabold text-gray-900">Patient Placeholder 1</h4>
+                            <p class="text-sm text-gray-500 font-medium">Local Resident</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-sm hover:shadow-premium transition-shadow border border-gray-100 relative">
+                    <i class="fa-solid fa-quote-left text-5xl text-green-50 absolute top-8 right-8"></i>
+                    <div class="flex text-yellow-400 mb-6 text-sm gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-8 relative z-10 text-lg">"We have been visiting Sanjivani Clinic as our family physician for over 10 years. The diagnosis is always spot on, and the care provided is exceptional."</p>
+                    <div class="flex items-center gap-4 border-t border-gray-50 pt-6">
+                        <div class="w-14 h-14 bg-emerald-50 rounded-full flex items-center justify-center text-medical-green font-bold text-xl border border-emerald-100">P2</div>
+                        <div>
+                            <h4 class="font-extrabold text-gray-900">Patient Placeholder 2</h4>
+                            <p class="text-sm text-gray-500 font-medium">Regular Patient</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-sm hover:shadow-premium transition-shadow border border-gray-100 relative">
+                    <i class="fa-solid fa-quote-left text-5xl text-purple-50 absolute top-8 right-8"></i>
+                    <div class="flex text-yellow-400 mb-6 text-sm gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-8 relative z-10 text-lg">"Very clean clinic and professional environment. The combination of general medicine with alternative treatments like acupuncture makes this clinic unique."</p>
+                    <div class="flex items-center gap-4 border-t border-gray-50 pt-6">
+                        <div class="w-14 h-14 bg-purple-50 rounded-full flex items-center justify-center text-purple-600 font-bold text-xl border border-purple-100">P3</div>
+                        <div>
+                            <h4 class="font-extrabold text-gray-900">Patient Placeholder 3</h4>
+                            <p class="text-sm text-gray-500 font-medium">Recent Visitor</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Call to Action Section -->
+    <section class="py-28 relative overflow-hidden bg-medical-darkblue">
+        <div class="absolute inset-0 opacity-10 bg-dots"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-medical-blue rounded-full mix-blend-screen opacity-20 blur-3xl"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white mb-6 leading-tight">Take the First Step Towards Better Health</h2>
+            <p class="text-xl sm:text-2xl text-blue-100 mb-10 max-w-2xl mx-auto font-medium">Don't ignore your symptoms. Get expert medical advice from Dr. Sanjay M. Kalburgi today.</p>
+            
+            <a href="https://wa.me/919880850111?text=Hello%20Doctor,%20I%20want%20to%20schedule%20a%20consultation." target="_blank" 
+               class="inline-flex flex-col sm:flex-row items-center justify-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white px-10 py-5 rounded-full font-bold text-xl shadow-2xl transition-all transform hover:scale-105 w-full sm:w-auto">
+                <i class="fa-brands fa-whatsapp text-3xl"></i> Chat on WhatsApp Now
+            </a>
+            <p class="mt-8 text-blue-200 text-sm font-semibold tracking-wide">FAST RESPONSE DURING CLINIC HOURS: 11AM-3:30PM & 6PM-11PM</p>
+        </div>
+    </section>
+
+    <!-- 8. Footer -->
+    <footer class="bg-[#0b1120] text-gray-400 pt-20 pb-10 border-t-4 border-medical-green">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                
+                <!-- Brand Info -->
+                <div class="col-span-1 lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-medical-blue text-white rounded-xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-notes-medical"></i>
+                        </div>
+                        <div>
+                            <span class="font-heading font-extrabold text-2xl text-white block leading-none">Sanjivani</span>
+                            <span class="text-xs text-medical-blue font-bold tracking-widest uppercase mt-1 block">Clinic</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-8 text-sm leading-relaxed">Providing compassionate, comprehensive, and holistic healthcare for over 25 years.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-medical-blue text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-medical-blue text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-medical-blue text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Doctor Info -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-lg tracking-wide">Doctor Profile</h4>
+                    <p class="font-bold text-gray-200 mb-1 text-lg">Dr. Sanjay M. Kalburgi</p>
+                    <p class="text-sm text-medical-blue mb-5 font-semibold">Family Physician & Acupuncturist</p>
+                    <ul class="space-y-3 text-sm text-gray-400 font-medium">
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-medical-blue"></div> B.Sc.</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-medical-blue"></div> B.A.M.S.</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-medical-blue"></div> MD (AM)</li>
+                        <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-medical-blue"></div> DAC</li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-lg tracking-wide">Quick Links</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="#home" class="hover:text-medical-blue transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs"></i> Home</a></li>
+                        <li><a href="#about" class="hover:text-medical-blue transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs"></i> About</a></li>
+                        <li><a href="#services" class="hover:text-medical-blue transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs"></i> Services</a></li>
+                        <li><a href="https://maps.app.goo.gl/AzA5MXzTCymXaKLF6?g_st=ac" target="_blank" class="hover:text-medical-blue transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs"></i> Get Directions</a></li>
+                        <li><a href="#appointment" class="hover:text-medical-blue transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs"></i> Book Appointment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 text-lg tracking-wide">Contact Details</h4>
+                    <ul class="space-y-5 text-sm">
+                        <li class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center text-medical-blue shrink-0"><i class="fa-regular fa-clock"></i></div>
+                            <div class="pt-1">
+                                <strong class="text-gray-300 block mb-1">Clinic Timings:</strong>
+                                11:00 AM – 3:30 PM<br>6:00 PM – 11:00 PM
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center text-medical-blue shrink-0"><i class="fa-solid fa-phone"></i></div>
+                            <a href="https://wa.me/919880850111" class="hover:text-white transition-colors font-bold text-base">+91 98808 50111</a>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center text-medical-blue shrink-0"><i class="fa-solid fa-location-dot"></i></div>
+                            <a href="https://maps.app.goo.gl/AzA5MXzTCymXaKLF6?g_st=ac" target="_blank" class="hover:text-white transition-colors pt-1">
+                                Sanjivani Clinic<br>View on Google Maps
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm font-medium">
+                <p>&copy; <span id="year"></span> Sanjivani Clinic. All Rights Reserved.</p>
+                <p class="mt-4 md:mt-0">Designed for Dr. Sanjay M. Kalburgi</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919880850111" target="_blank" class="wa-float fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:bg-[#128C7E] transition-colors" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            const icon = btn.querySelector('i');
+            if(menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        });
+
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                btn.querySelector('i').classList.remove('fa-xmark');
+                btn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Navbar shadow on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-sm');
+                nav.classList.replace('py-0', 'py-0'); 
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('shadow-sm');
+            }
+        });
+
+        // WhatsApp Form Handling
+        function handleBooking(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('patientName').value.trim();
+            const phone = document.getElementById('patientPhone').value.trim();
+            const date = document.getElementById('preferredDate').value;
+            const message = document.getElementById('patientMessage').value.trim();
+
+            const waNumber = "919880850111";
+            let text = `Hello Doctor, I would like to book an appointment.%0A%0A`;
+            text += `*Name:* ${name}%0A`;
+            text += `*Phone:* ${phone}%0A`;
+            
+            if(date) {
+                const dateObj = new Date(date);
+                const formattedDate = dateObj.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+                text += `*Preferred Date:* ${formattedDate}%0A`;
+            }
+
+            if(message) {
+                text += `*Message:* ${message}%0A`;
+            }
+
+            const waUrl = `https://wa.me/${waNumber}?text=${text}`;
+            window.open(waUrl, '_blank');
+        }
+
+        const dateInput = document.getElementById('preferredDate');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+    </script>
+</body>
+</html>
