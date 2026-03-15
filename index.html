@@ -78,6 +78,15 @@
             background-size: 20px 20px;
         }
 
+        /* Hide scrollbar for certificates carousel */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
         /* Floating WhatsApp Animation */
         @keyframes pulse-ring {
             0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
@@ -192,7 +201,7 @@
 
                             <!-- INSTRUCTION: To add the doctor's profile photo, replace the 'src' link below with your actual image path or URL (e.g., src="images/doctor-profile.jpg") -->
                             <div class="w-32 h-32 sm:w-40 sm:h-40 bg-white rounded-full flex items-center justify-center shadow-2xl mb-6 relative z-10 border-4 border-white overflow-hidden">
-                                <img src="smiling-indian-male-doctor-with-crossed-arms-isolated-transparent-background-png.webp" alt="Dr. Sanjay M. Kalburgi" class="w-full h-full object-cover">
+                                <img src="IMG-20260315-WA0012~2.jpg.jpeg" alt="Dr. Sanjay M. Kalburgi" class="w-full h-full object-cover">
                             </div>
                             
                             <div class="text-center z-10 space-y-2 bg-white/80 px-8 py-3 rounded-2xl shadow-sm border border-gray-100 backdrop-blur-md">
@@ -262,7 +271,7 @@
                     <div class="relative rounded-[2.5rem] overflow-hidden shadow-premium aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] group bg-medical-darkblue">
                         
                         <!-- INSTRUCTION: To add a full photo of the doctor/clinic, replace the 'src' link below with your actual image path or URL (e.g., src="images/clinic-photo.jpg") -->
-                        <img src="smiling-indian-male-doctor-with-crossed-arms-isolated-transparent-background-png.webp" alt="Dr. Kalburgi in Clinic" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+                        <img src="IMG-20260315-WA0012~2.jpg.jpeg" alt="Dr. Kalburgi in Clinic" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
                         
                         <!-- Quote Overlay -->
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0b1120] to-transparent p-8 pt-24 z-10">
@@ -277,6 +286,149 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- 2.5 Certificates & Honours Section -->
+    <section id="certificates" class="py-24 bg-slate-50 relative border-t border-gray-100 overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute inset-0 bg-dots opacity-40"></div>
+        <div class="absolute top-1/2 left-0 w-96 h-96 bg-medical-blue rounded-full mix-blend-multiply opacity-5 blur-3xl transform -translate-y-1/2"></div>
+        
+        <div class="max-w-[100rem] mx-auto relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 px-4">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-50 text-amber-600 rounded-full text-sm font-bold mb-4 border border-amber-200">
+                    <i class="fa-solid fa-award"></i> Awards & Recognition
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-medical-darkblue mb-6">Certificates & Honours</h2>
+                <p class="text-gray-600 text-lg sm:text-xl">A testament to decades of dedication, continuous learning, and excellence in healthcare.</p>
+            </div>
+
+            <!-- Scrollable Container -->
+            <div class="relative">
+                <!-- Fade gradients for desktop to indicate scrollability -->
+                <div class="absolute top-0 left-0 w-12 sm:w-24 h-full bg-gradient-to-r from-slate-50 to-transparent z-10 hidden md:block pointer-events-none"></div>
+                <div class="absolute top-0 right-0 w-12 sm:w-24 h-full bg-gradient-to-l from-slate-50 to-transparent z-10 hidden md:block pointer-events-none"></div>
+
+                <div class="flex overflow-x-auto gap-6 sm:gap-8 pb-12 pt-4 snap-x snap-mandatory scrollbar-hide px-6 sm:px-12 md:px-24">
+                    
+                    <!-- Certificate 1 -->
+                    <div class="flex-none w-[280px] sm:w-[320px] aspect-[3/4] bg-white rounded-[2rem] shadow-sm border border-gray-100 p-3 snap-center group hover:shadow-premium hover:-translate-y-2 transition-all duration-500">
+                        <div class="w-full h-full rounded-3xl overflow-hidden relative border border-gray-100 bg-gray-50">
+                            <img src="1773575987505.png" alt="B.Sc. Degree" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-medical-darkblue/90 via-medical-darkblue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-center">
+                                <h4 class="text-white font-bold text-lg mb-1"></h4>
+                                <p class="text-blue-200 text-sm"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 2 -->
+                    <div class="flex-none w-[280px] sm:w-[320px] aspect-[3/4] bg-white rounded-[2rem] shadow-sm border border-gray-100 p-3 snap-center group hover:shadow-premium hover:-translate-y-2 transition-all duration-500">
+                        <div class="w-full h-full rounded-3xl overflow-hidden relative border border-gray-100 bg-gray-50">
+                            <img src="1773576272664.png" alt="B.A.M.S. Degree" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-medical-darkblue/90 via-medical-darkblue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-center">
+                                <h4 class="text-white font-bold text-lg mb-1"></h4>
+                                <p class="text-blue-200 text-sm"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 3 -->
+                    <div class="flex-none w-[280px] sm:w-[320px] aspect-[3/4] bg-white rounded-[2rem] shadow-sm border border-gray-100 p-3 snap-center group hover:shadow-premium hover:-translate-y-2 transition-all duration-500">
+                        <div class="w-full h-full rounded-3xl overflow-hidden relative border border-gray-100 bg-gray-50">
+                            <img src="IMG-20260315-WA0014~2.jpg.jpeg" alt="MD (AM) Degree" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-medical-darkblue/90 via-medical-darkblue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-center">
+                                <h4 class="text-white font-bold text-lg mb-1"></h4>
+                                <p class="text-blue-200 text-sm"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 4 -->
+                    <div class="flex-none w-[280px] sm:w-[320px] aspect-[3/4] bg-white rounded-[2rem] shadow-sm border border-gray-100 p-3 snap-center group hover:shadow-premium hover:-translate-y-2 transition-all duration-500">
+                        <div class="w-full h-full rounded-3xl overflow-hidden relative border border-gray-100 bg-gray-50">
+                            <img src="1773576452912.png" alt="DAC Certification" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-medical-darkblue/90 via-medical-darkblue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-center">
+                                <h4 class="text-white font-bold text-lg mb-1"></h4>
+                                <p class="text-blue-200 text-sm"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 5 -->
+                    <div class="flex-none w-[280px] sm:w-[320px] aspect-[3/4] bg-white rounded-[2rem] shadow-sm border border-gray-100 p-3 snap-center group hover:shadow-premium hover:-translate-y-2 transition-all duration-500">
+                        <div class="w-full h-full rounded-3xl overflow-hidden relative border border-gray-100 bg-gray-50">
+                            <img src="1773576452912.jpeg" alt="Excellence Award" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-medical-darkblue/90 via-medical-darkblue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-center">
+                                <h4 class="text-white font-bold text-lg mb-1">Clinical Excellence</h4>
+                                <p class="text-blue-200 text-sm">25+ Years of Service</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 6 -->
+                    <div class="flex-none w-[280px] sm:w-[320px] aspect-[3/4] bg-white rounded-[2rem] shadow-sm border border-gray-100 p-3 snap-center group hover:shadow-premium hover:-translate-y-2 transition-all duration-500">
+                        <div class="w-full h-full rounded-3xl overflow-hidden relative border border-gray-100 bg-gray-50">
+                            <img src="1773576622109.png" alt="Medical Board Registration" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-medical-darkblue/90 via-medical-darkblue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-center">
+                                <h4 class="text-white font-bold text-lg mb-1"></h4>
+                                <p class="text-blue-200 text-sm"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 7 -->
+                    <div class="flex-none w-[280px] sm:w-[320px] aspect-[3/4] bg-white rounded-[2rem] shadow-sm border border-gray-100 p-3 snap-center group hover:shadow-premium hover:-translate-y-2 transition-all duration-500">
+                        <div class="w-full h-full rounded-3xl overflow-hidden relative border border-gray-100 bg-gray-50">
+                            <img src="1773576905497.png" alt="Clinic Registration" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-medical-darkblue/90 via-medical-darkblue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-center">
+                                <h4 class="text-white font-bold text-lg mb-1"></h4>
+                                <p class="text-blue-200 text-sm"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 8 -->
+                    <div class="flex-none w-[280px] sm:w-[320px] aspect-[3/4] bg-white rounded-[2rem] shadow-sm border border-gray-100 p-3 snap-center group hover:shadow-premium hover:-translate-y-2 transition-all duration-500">
+                        <div class="w-full h-full rounded-3xl overflow-hidden relative border border-gray-100 bg-gray-50">
+                            <img src="IMG-20260315-WA0016~2.jpg.jpeg" alt="Seminar Participation" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-medical-darkblue/90 via-medical-darkblue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-center">
+                                <h4 class="text-white font-bold text-lg mb-1"></h4>
+                                <p class="text-blue-200 text-sm"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 9 -->
+                    <div class="flex-none w-[280px] sm:w-[320px] aspect-[3/4] bg-white rounded-[2rem] shadow-sm border border-gray-100 p-3 snap-center group hover:shadow-premium hover:-translate-y-2 transition-all duration-500">
+                        <div class="w-full h-full rounded-3xl overflow-hidden relative border border-gray-100 bg-gray-50">
+                            <img src="1773577063863.png" alt="Special Training" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-medical-darkblue/90 via-medical-darkblue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-center">
+                                <h4 class="text-white font-bold text-lg mb-1"></h4>
+                                <p class="text-blue-200 text-sm"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 10 -->
+                    <div class="flex-none w-[280px] sm:w-[320px] aspect-[3/4] bg-white rounded-[2rem] shadow-sm border border-gray-100 p-3 snap-center group hover:shadow-premium hover:-translate-y-2 transition-all duration-500">
+                        <div class="w-full h-full rounded-3xl overflow-hidden relative border border-gray-100 bg-gray-50">
+                            <img src="1773577759268.png" alt="Appreciation Award" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-medical-darkblue/90 via-medical-darkblue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-center">
+                                <h4 class="text-white font-bold text-lg mb-1"></h4>
+                                <p class="text-blue-200 text-sm"></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Swipe Indicator for Mobile -->
+                <div class="flex items-center justify-center gap-3 mt-2 text-gray-500 text-sm font-bold md:hidden animate-pulse">
+                    <i class="fa-solid fa-arrow-left-long"></i> Swipe to explore <i class="fa-solid fa-arrow-right-long"></i>
+                </div>
             </div>
         </div>
     </section>
